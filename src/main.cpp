@@ -102,10 +102,10 @@ int main()
     OCL_SAFE_CALL(errorCode);
 
     // TODO 10 Выставите все аргументы в кернеле через clSetKernelArg (as_gpu, bs_gpu, cs_gpu и число значений, убедитесь что тип количества элементов такой же в кернеле)
-    kernel.setArg(0, bufferA);
-    kernel.setArg(1, bufferB);
-    kernel.setArg(2, bufferC);
-    kernel.setArg(3, (unsigned int) n);
+    OCL_SAFE_CALL(kernel.setArg(0, bufferA));
+    OCL_SAFE_CALL(kernel.setArg(1, bufferB));
+    OCL_SAFE_CALL(kernel.setArg(2, bufferC));
+    OCL_SAFE_CALL(kernel.setArg(3, (unsigned int) n));
 
     // TODO 11 Выше увеличьте n с 1000*1000 до 100*1000*1000 (чтобы дальнейшие замеры были ближе к реальности)
     
